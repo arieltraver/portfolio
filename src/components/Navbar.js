@@ -1,3 +1,4 @@
+import React from "react"
 
 const Navbar = () => (
     <nav class="navbar navbar-expand-lg fixed-top navbarScroll">

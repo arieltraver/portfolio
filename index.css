@@ -1,0 +1,19 @@
+/* skills section css */
+.skillsText.card {
+    height: 280px;
+    cursor: pointer;
+  }
+.skillsIcon {
+    font-size: 36px;
+    text-align: center;
+    width: 100%;
+}
+.card-title {
+    text-align: center;
+}
+.card:hover .skillsIcon {
+    color: #008000;
+}
+.skillsText:hover {
+    border: 1px solid #008000;
+}
