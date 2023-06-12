@@ -1,4 +1,5 @@
 // add class navbarDark on navbar scroll
+//tutorial: https://lo-victoria.com/how-to-build-a-contact-form-with-javascript-and-nodemailer 
 const header = document.querySelector('.navbar');
 console.log(header)
 window.onscroll = function() {
@@ -21,3 +22,24 @@ navLinks.forEach((l) => {
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
   })
+
+const form = document.getElementById("contact-me"); 
+
+const formEvent = form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  let mail = new FormData(form);
+
+  sendMail(mail);
+})
+
+const sendMail = (mail) => {
+    //1.
+    fetch("/send", {
+      method: "post", //2.
+      body: mail, //3.
+  
+    }).then((response) => {
+      return response.json();
+    });
+  };
