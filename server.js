@@ -3,14 +3,16 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
 const multiparty = require("multiparty");
+const cors = require("cors")
 require("dotenv").config();
 
 // instantiate an express app
 const app = express();
+app.use(cors({ origin: "*" }));
 
 //make the contact page the the first page on the app
 app.route("/").get(function (req, res) {
-  res.sendFile(process.cwd() + "index.html");
+  res.sendFile(process.cwd() + "/index.html");
 });
 
 const PORT = process.env.PORT || 5000;

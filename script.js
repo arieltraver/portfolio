@@ -23,7 +23,7 @@ $(function () {
     $('[data-toggle="tooltip"]').tooltip()
   })
 
-const form = document.getElementById("contact-me"); 
+const form = document.getElementById("contact-form"); 
 
 const formEvent = form.addEventListener("submit", (event) => {
   event.preventDefault();
