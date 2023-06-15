@@ -3,17 +3,21 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
 const multiparty = require("multiparty");
-const cors = require("cors")
+const cors = require("cors");
+const path = require("path");
 require("dotenv").config();
 
 // instantiate an express app
 const app = express();
 app.use(cors({ origin: "*" }));
 
+app.use(express.static(path.join(__dirname, 'public')))
+
 //make the contact page the the first page on the app
 app.route("/").get(function (req, res) {
-  res.sendFile(process.cwd() + "/index.html");
+  res.sendFile(path.resolve('public/index.html'))
 });
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
