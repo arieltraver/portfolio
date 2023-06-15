@@ -11,7 +11,7 @@ require("dotenv").config();
 const app = express();
 app.use(cors({ origin: "*" }));
 
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'docs')))
 
 //make the contact page the the first page on the app
 app.route("/").get(function (req, res) {
